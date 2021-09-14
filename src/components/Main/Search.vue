@@ -1,0 +1,57 @@
+<template>
+    <div class="search">
+        <div class="icon">
+            <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.2962 13.996C11.8854 15.2431 10.0311 16 8 16C3.58172 16 0 12.4183 0 8C0 3.58172 3.58172 0 8 0C12.4183 0 16 3.58172 16 8C16 9.68621 15.4783 11.2506 14.5875 12.5405C14.6293 12.5707 14.6693 12.6046 14.7069 12.6423L16.2469 14.1822C16.6287 14.5641 16.6287 15.1832 16.2469 15.565C15.865 15.9469 15.2459 15.9469 14.8641 15.565L13.3241 14.0251C13.3146 14.0155 13.3053 14.0058 13.2962 13.996ZM14.0444 8C14.0444 11.3383 11.3383 14.0444 8 14.0444C4.66175 14.0444 1.95556 11.3383 1.95556 8C1.95556 4.66175 4.66175 1.95556 8 1.95556C11.3383 1.95556 14.0444 4.66175 14.0444 8Z" fill="#9A99B8"/>
+            </svg>
+        </div>
+        <input type="text" name="searchText" id="search" placeholder="Поиск">
+    </div>
+</template>
+
+<script>
+export default {
+    mounted() {
+        this.$el.addEventListener('click', () => {
+            this.$nextTick(() => {
+                this.$el.querySelector('#search').focus();
+            })          
+        })
+    }
+}
+</script>
+
+
+<style lang="scss">
+input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.search {
+    width: 250px;
+    height: 36px;
+    background: #FFFFFF;
+    border-radius: 13px;
+    display: flex;
+    padding: 10px;
+    .icon {
+        margin-right: 10px;
+    }
+    input {
+        width: 100%;
+        background-color: #fff;
+        &::placeholder {
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 16px;
+            color: #9A99B8;
+        }
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+
+        color: #9A99B8;
+    }
+}
+</style>
